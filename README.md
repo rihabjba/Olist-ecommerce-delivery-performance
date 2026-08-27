@@ -25,3 +25,26 @@ JOIN orders o ON c.customer_id = o.customer_id
 GROUP BY c.customer_state
 ORDER BY total_orders DESC
 LIMIT 10;
+
+#Insight: São Paulo (SP) accounts for the vast majority of volume (41,746 orders), followed by Rio de Janeiro (RJ) and Minas Gerais (MG).
+
+#2. Overall Delivery Performance (On Time vs. Late)
+#A calculated field using conditional logic was built to categorize deliveries.
+
+SELECT 
+    CASE 
+        WHEN order_delivered_customer_date > order_estimated_delivery_date THEN 'Late'
+        ELSE 'On Time'
+    END AS delivery_status,
+    COUNT(order_id) AS total_orders
+FROM orders
+WHERE order_status = 'delivered' 
+  AND order_delivered_customer_date IS NOT NULL
+GROUP BY delivery_status;
+
+#Insight: Approximately 8.11% of all delivered orders arrived past their estimated delivery date.
+
+#3. Analyzing Late Deliveries by State
+Combining volume tracking with delivery failure categorization:
+
+SQL
