@@ -3,7 +3,7 @@
 ## Project Overview
 This project analyzes delivery performance for **Olist**, a Brazilian e-commerce company, focusing on identifying bottlenecks and late delivery patterns across different states. The analysis connects customer demographic data with order fulfillment records to provide actionable insights for logistics optimization.
 
-<img width="602" height="337" alt="image" src="https://github.com/user-attachments/assets/29ca0b81-97cb-4959-a1e8-64a0674dba6e" />
+<img width="601" height="338" alt="image" src="https://github.com/user-attachments/assets/591b38af-9385-43af-a206-69b3cba58539" />
 
 
 ## Data Preparation & Processing
